@@ -1,0 +1,320 @@
+{
+  "description": "Published protocol settings only. Validation/test metrics and development observations deliberately omitted.",
+  "raw_graph_sha256": "a342ab57e9073e6c02bb5e109d1f16917e6f933be4e5c77ebbaebfa26b984c19",
+  "development_splits": [
+    181101,
+    181102
+  ],
+  "formal_splits": [
+    181201,
+    181202,
+    181203,
+    181204,
+    181205
+  ],
+  "reference_seeds": [
+    17001,
+    17002,
+    17003
+  ],
+  "development_grid": {
+    "FT": [
+      {
+        "lr": 0.0001,
+        "multiplier": 0.0
+      },
+      {
+        "lr": 0.0002,
+        "multiplier": 0.0
+      },
+      {
+        "lr": 0.0003,
+        "multiplier": 0.0
+      },
+      {
+        "lr": 0.0005,
+        "multiplier": 0.0
+      },
+      {
+        "lr": 0.001,
+        "multiplier": 0.0
+      },
+      {
+        "lr": 0.002,
+        "multiplier": 0.0
+      },
+      {
+        "lr": 0.003,
+        "multiplier": 0.0
+      },
+      {
+        "lr": 0.005,
+        "multiplier": 0.0
+      },
+      {
+        "lr": 0.01,
+        "multiplier": 0.0
+      }
+    ],
+    "Full-old": [
+      {
+        "lr": 0.001,
+        "multiplier": 0.1
+      },
+      {
+        "lr": 0.001,
+        "multiplier": 1.0
+      },
+      {
+        "lr": 0.001,
+        "multiplier": 10.0
+      },
+      {
+        "lr": 0.003,
+        "multiplier": 0.1
+      },
+      {
+        "lr": 0.003,
+        "multiplier": 1.0
+      },
+      {
+        "lr": 0.003,
+        "multiplier": 10.0
+      },
+      {
+        "lr": 0.01,
+        "multiplier": 0.1
+      },
+      {
+        "lr": 0.01,
+        "multiplier": 1.0
+      },
+      {
+        "lr": 0.01,
+        "multiplier": 10.0
+      }
+    ],
+    "Full-input": [
+      {
+        "lr": 0.001,
+        "multiplier": 0.1
+      },
+      {
+        "lr": 0.001,
+        "multiplier": 1.0
+      },
+      {
+        "lr": 0.001,
+        "multiplier": 10.0
+      },
+      {
+        "lr": 0.003,
+        "multiplier": 0.1
+      },
+      {
+        "lr": 0.003,
+        "multiplier": 1.0
+      },
+      {
+        "lr": 0.003,
+        "multiplier": 10.0
+      },
+      {
+        "lr": 0.01,
+        "multiplier": 0.1
+      },
+      {
+        "lr": 0.01,
+        "multiplier": 1.0
+      },
+      {
+        "lr": 0.01,
+        "multiplier": 10.0
+      }
+    ],
+    "Random-all": [
+      {
+        "lr": 0.001,
+        "multiplier": 0.1
+      },
+      {
+        "lr": 0.001,
+        "multiplier": 1.0
+      },
+      {
+        "lr": 0.001,
+        "multiplier": 10.0
+      },
+      {
+        "lr": 0.003,
+        "multiplier": 0.1
+      },
+      {
+        "lr": 0.003,
+        "multiplier": 1.0
+      },
+      {
+        "lr": 0.003,
+        "multiplier": 10.0
+      },
+      {
+        "lr": 0.01,
+        "multiplier": 0.1
+      },
+      {
+        "lr": 0.01,
+        "multiplier": 1.0
+      },
+      {
+        "lr": 0.01,
+        "multiplier": 10.0
+      }
+    ],
+    "Structure": [
+      {
+        "lr": 0.001,
+        "multiplier": 0.1
+      },
+      {
+        "lr": 0.001,
+        "multiplier": 1.0
+      },
+      {
+        "lr": 0.001,
+        "multiplier": 10.0
+      },
+      {
+        "lr": 0.003,
+        "multiplier": 0.1
+      },
+      {
+        "lr": 0.003,
+        "multiplier": 1.0
+      },
+      {
+        "lr": 0.003,
+        "multiplier": 10.0
+      },
+      {
+        "lr": 0.01,
+        "multiplier": 0.1
+      },
+      {
+        "lr": 0.01,
+        "multiplier": 1.0
+      },
+      {
+        "lr": 0.01,
+        "multiplier": 10.0
+      }
+    ]
+  },
+  "tasks": {
+    "node": {
+      "selected_configs": {
+        "FT": {
+          "lr": 0.01,
+          "multiplier": 0.0
+        },
+        "Full-old": {
+          "lr": 0.01,
+          "multiplier": 0.1
+        },
+        "Full-input": {
+          "lr": 0.01,
+          "multiplier": 0.1
+        },
+        "Random-all": {
+          "lr": 0.01,
+          "multiplier": 0.1
+        },
+        "Structure": {
+          "lr": 0.01,
+          "multiplier": 0.1
+        }
+      },
+      "base_seeds": {
+        "181201": [
+          190000,
+          190001,
+          190002,
+          190003
+        ],
+        "181202": [
+          190010,
+          190011,
+          190012,
+          190013
+        ],
+        "181203": [
+          190020,
+          190021,
+          190022,
+          190023
+        ],
+        "181204": [
+          190030,
+          190031,
+          190032,
+          190033
+        ],
+        "181205": [
+          190040,
+          190041,
+          190042,
+          190043
+        ]
+      },
+      "planning_delta": 0.005,
+      "actual_bases": 20
+    },
+    "relation": {
+      "selected_configs": {
+        "FT": {
+          "lr": 0.01,
+          "multiplier": 0.0
+        },
+        "Full-old": {
+          "lr": 0.01,
+          "multiplier": 1.0
+        },
+        "Full-input": {
+          "lr": 0.01,
+          "multiplier": 10.0
+        },
+        "Random-all": {
+          "lr": 0.01,
+          "multiplier": 0.1
+        },
+        "Structure": {
+          "lr": 0.01,
+          "multiplier": 10.0
+        }
+      },
+      "base_seeds": {
+        "181201": [
+          200000,
+          200001
+        ],
+        "181202": [
+          200010,
+          200011
+        ],
+        "181203": [
+          200020,
+          200021
+        ],
+        "181204": [
+          200030,
+          200031
+        ],
+        "181205": [
+          200040,
+          200041
+        ]
+      },
+      "planning_delta": 0.01,
+      "actual_bases": 10
+    }
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "package": "Biomedical_Graph_Knowledge_State_Maintenance",
+  "paper_title": "Knowledge-State Maintenance in Biomedical Graph Learning: An Empirical Study of Representation Constraints",
+  "created_date": "2026-09-23",
+  "content": "Code, experiment configuration, synthetic tests and documentation only; no datasets, checkpoints or experiment results.",
+  "files": {
+    ".gitignore": {
+      "sha256": "0f4883e62f895821e2bfea59be77903ad7a83484b6e8d5b54a41e39851e2430b",
+      "bytes": 94,
+      "role": "reproduction_support"
+    },
+    "EXPERIMENT_SOURCE_MANIFEST.json": {
+      "sha256": "bc6df309db1e71ec2e6c630d795326fca463cfa169bb0d472888d19b622aa0c7",
+      "bytes": 15729,
+      "role": "reproduction_support"
+    },
+    "README.md": {
+      "sha256": "808679737de71ea69b42d44b97cf6f276bc6937eab793bb7eb7af12ecfdf06b8",
+      "bytes": 8427,
+      "role": "reproduction_support"
+    },
+    "configs/analysis_steps.json": {
+      "sha256": "522f35ae52be67c7fcac152c03d7a95259bd3b4501ea78ce0e315b41d0fee19a",
+      "bytes": 177,
+      "role": "reproduction_support"
+    },
+    "configs/paper_protocol.json": {
+      "sha256": "67b96530b17f23ba017a2b92511e66364dae7880252e5e27d256dfdce1a0cec8",
+      "bytes": 5427,
+      "role": "reproduction_support"
+    },
+    "docs/DATA_PREPARATION.md": {
+      "sha256": "d16faf8c3132b0baf359864b275cf419c8f51329c47233a39742bfcc38c2175e",
+      "bytes": 7140,
+      "role": "reproduction_support"
+    },
+    "docs/ENVIRONMENT.md": {
+      "sha256": "81247f509ef0a74aa511a3cfd01c4f4365bb907a5ac0317d7025ff3e7609a55e",
+      "bytes": 5745,
+      "role": "reproduction_support"
+    },
+    "docs/PAPER_TO_CODE.md": {
+      "sha256": "7e3c0162f577d59d9a6bee6286c838d7c1d60c9e6de8813c4dc589396f6c601e",
+      "bytes": 13693,
+      "role": "reproduction_support"
+    },
+    "experiments/knowledge_state_maintenance/__init__.py": {
+      "sha256": "fd1d95d20eb398c4a591c49ebfb2f5126fa3684b4f57f4ba2469c1cab3ae8f5f",
+      "bytes": 78,
+      "role": "experiment_source"
+    },
+    "experiments/knowledge_state_maintenance/report.py": {
+      "sha256": "335161750955c5de549a246f03fdd68e9a128cd490b61787096dfcd21f65cd27",
+      "bytes": 20112,
+      "role": "experiment_source"
+    },
+    "experiments/knowledge_state_maintenance/run.py": {
+      "sha256": "f3fc1f0cd91eafb3c13939e5ab7c5a53f43c28b35de23d5493fe4bd9e1b76f8d",
+      "bytes": 25497,
+      "role": "experiment_source"
+    },
+    "experiments/knowledge_state_maintenance/runtime.py": {
+      "sha256": "9257217c261b0976397a69b0477757991288d6a40f858fbc46bb1319d2e010b6",
+      "bytes": 20570,
+      "role": "experiment_source"
+    },
+    "reproduction/PROTOCOL.md": {
+      "sha256": "a185ccdbba8f85d5aee7bb1c53554496a78f208b84dd549883cb1bd347d96bc7",
+      "bytes": 8291,
+      "role": "experiment_source"
+    },
+    "requirements.txt": {
+      "sha256": "317c4550fff20016cab0473814e4cdfdfe9fb0c1f590f30a6399208c90dd23f6",
+      "bytes": 427,
+      "role": "reproduction_support"
+    },
+    "scripts/prepare_data.py": {
+      "sha256": "093fe4af123106e837e368a2844291bbb1999e51db9497a8f50151ab753de0c0",
+      "bytes": 9464,
+      "role": "reproduction_support"
+    },
+    "scripts/reproduce.py": {
+      "sha256": "5b2febcf1a39dcd2436d8e5b39d83542b1eb35997765e55ed3fe804fe6bad33b",
+      "bytes": 14975,
+      "role": "reproduction_support"
+    },
+    "scripts/summarize_paper.py": {
+      "sha256": "acc2f7731295617a89de8aafc2eb60f62992cb3d4150d2871dcdc1a00027621a",
+      "bytes": 18359,
+      "role": "reproduction_support"
+    },
+    "scripts/verify_package.py": {
+      "sha256": "7fdc6ed8e622c9c2c2859b5f834f6896879c84e16970f147f74ecb71d085865e",
+      "bytes": 1995,
+      "role": "reproduction_support"
+    },
+    "src/data/__init__.py": {
+      "sha256": "b80c9ed6835a279f177e3278562ad2b4340c67edb27bd7f74901c7df5a23de0e",
+      "bytes": 926,
+      "role": "experiment_source"
+    },
+    "src/data/datasets.py": {
+      "sha256": "2fbe208edc1f66901d02c7bba2c381ce9e05c19ba9e1e1427b42f45a093ba999",
+      "bytes": 23624,
+      "role": "experiment_source"
+    },
+    "src/data/forget_sets.py": {
+      "sha256": "4d48df66ad0e70a73a8402cbb6c1b8ac01b4e5dbe536ce7ce398560333ee81b9",
+      "bytes": 7409,
+      "role": "experiment_source"
+    },
+    "src/data/hetionet.py": {
+      "sha256": "6c00ba8fa0fe83fb09bca8ea169e94adb80afc2847089dfc38f17bc0e8484c17",
+      "bytes": 21100,
+      "role": "experiment_source"
+    },
+    "src/data/primekg.py": {
+      "sha256": "7326d68594a9a6b1e2d70fcefc9e6d8c19f8f841cb61ef36bc9ac06aad5f6b0c",
+      "bytes": 33756,
+      "role": "experiment_source"
+    },
+    "src/evaluation/__init__.py": {
+      "sha256": "e4fba28e97d69e1415c8d79cad6211241d6353069987fbb1c0de8cacd846d4ae",
+      "bytes": 597,
+      "role": "experiment_source"
+    },
+    "src/evaluation/metrics.py": {
+      "sha256": "0a8535c1c8bdb76c7066d74ff3c39b1a82e0d483b01d12fe17eeeb5cc7bd83eb",
+      "bytes": 40108,
+      "role": "experiment_source"
+    },
+    "src/evaluation/mia/__init__.py": {
+      "sha256": "a30ceda1681c417d793c24763fc389aa7483d6defbf2fe6265a882b76ca30250",
+      "bytes": 104,
+      "role": "experiment_source"
+    },
+    "src/evaluation/mia/privacy_evaluator.py": {
+      "sha256": "86648907edec1c3a845f9db19e680bf43725e495f533e87404d034f5874fd855",
+      "bytes": 17118,
+      "role": "experiment_source"
+    },
+    "src/evaluation/retrain_reference.py": {
+      "sha256": "35b920f923543affb8e664645c09f2a9450e5e2b200f6b0d65c5da5ad0e15877",
+      "bytes": 3480,
+      "role": "experiment_source"
+    },
+    "src/evaluation/run_output_artifact.py": {
+      "sha256": "f59d5f84fe2a0d9c8c4f5c7ed931c905ffffd2bbc198a43794c3159a2bbe04c9",
+      "bytes": 4582,
+      "role": "experiment_source"
+    },
+    "src/hasi/__init__.py": {
+      "sha256": "2c307d35359557c6460d84864290e4f51a1f538ef3b8a09a792f9337aeacfd90",
+      "bytes": 308,
+      "role": "experiment_source"
+    },
+    "src/hasi/anchor_stabilization/__init__.py": {
+      "sha256": "364b24a7421ab33b68fb191b5bb964543ab8da828a647b829d470e5e6a2ed8af",
+      "bytes": 173,
+      "role": "experiment_source"
+    },
+    "src/hasi/anchor_stabilization/anchor_loss.py": {
+      "sha256": "268aaaaeb43d17ec2ffc75abdb1abdb2a004912262bbcad9da1ce13cffc70e1c",
+      "bytes": 2724,
+      "role": "experiment_source"
+    },
+    "src/hasi/anchor_stabilization/anchor_manager.py": {
+      "sha256": "7acf0f5b062783f8de65f549f37f1027b4a58d2ad4b7f2bd3e78207532b9f162",
+      "bytes": 1949,
+      "role": "experiment_source"
+    },
+    "src/hasi/dar/__init__.py": {
+      "sha256": "2b34f71221b016141f1c509327da22b1c212f58590d42156c2d031dba72e2f59",
+      "bytes": 161,
+      "role": "experiment_source"
+    },
+    "src/hasi/dar/pipeline.py": {
+      "sha256": "ae53bc2d1129b6aa69f56693f16800339ed5107734d9b329b496744bb1e8ee42",
+      "bytes": 18689,
+      "role": "experiment_source"
+    },
+    "src/hasi/erf_partitioning/__init__.py": {
+      "sha256": "c058a1ccd945277179c610046a9b90895a43a6baac4b15e300bea487b68c7f4d",
+      "bytes": 56,
+      "role": "experiment_source"
+    },
+    "src/hasi/erf_partitioning/ppr.py": {
+      "sha256": "1a147a6876a7bbc6c86144d6b595bc60b9654e7a29d882c86e9414a5c26df044",
+      "bytes": 5625,
+      "role": "experiment_source"
+    },
+    "src/hasi/graph_compute.py": {
+      "sha256": "b370c86d965bb29b5900acfcaddae781e9ae565f250a00ce9af6e9cbc42da6c7",
+      "bytes": 15004,
+      "role": "experiment_source"
+    },
+    "src/hasi/hub_identification/__init__.py": {
+      "sha256": "1dd6743b7f86fb5af7e87c43ba3729e9811ff84baa3f83bf83bc67fdaed49ea8",
+      "bytes": 252,
+      "role": "experiment_source"
+    },
+    "src/hasi/hub_identification/cache.py": {
+      "sha256": "aff718f64e1563221f599f8868614b0f623d837fe3e7cf6d1bdb479e2b57c5b6",
+      "bytes": 7007,
+      "role": "experiment_source"
+    },
+    "src/hasi/hub_identification/hub_scorer.py": {
+      "sha256": "a4489e8442cbc47e399a7b1719f0cb8289ad2da30bfe3e50046574747bf36c81",
+      "bytes": 10333,
+      "role": "experiment_source"
+    },
+    "src/hasi/structural_inpainting/__init__.py": {
+      "sha256": "6cb255d2d936d62623696c62bfec0e5303e04fae7e64464534c3a800c2fbe0c3",
+      "bytes": 156,
+      "role": "experiment_source"
+    },
+    "src/hasi/structural_inpainting/inpainter.py": {
+      "sha256": "578d49297c94694cfe90250032d6734239b09dc9d910fe8de059efbac1ad7ca0",
+      "bytes": 19977,
+      "role": "experiment_source"
+    },
+    "src/hasi/unlearner.py": {
+      "sha256": "85c9d1d2950191122fb581ceb2fb13019f849fb7618aa3d0606baa5cba7de164",
+      "bytes": 31362,
+      "role": "experiment_source"
+    },
+    "tests/test_knowledge_state_maintenance.py": {
+      "sha256": "4fce40412f789483df1d6c5c228ea2c6dac88a382a3b724c0803f6692f1ae349",
+      "bytes": 5159,
+      "role": "experiment_source"
+    },
+    "tests/test_paper_contrasts.py": {
+      "sha256": "6ea23e94c9167f911afd4e421a004f8b9dcec1247ce60430e130c3631e7c3dbc",
+      "bytes": 3501,
+      "role": "reproduction_support"
+    },
+    "tests/test_prepare_data.py": {
+      "sha256": "21d749746a1f8765ea25b0beb39347cc5e9d8b63536011aacb163d87cecf4b0e",
+      "bytes": 4295,
+      "role": "reproduction_support"
+    },
+    "tests/test_reproduction_tools.py": {
+      "sha256": "375fadc1c234a7629087176fd7f12e1c5689bdf6327955d03f35cb3905875469",
+      "bytes": 3014,
+      "role": "reproduction_support"
+    }
+  }
+}

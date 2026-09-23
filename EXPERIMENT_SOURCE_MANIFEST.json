@@ -1,0 +1,278 @@
+{
+  "description": "Current-manuscript experiment dependency subset. Directory/module references renamed as requested; training and statistical algorithms unchanged.",
+  "original_snapshot_sha256": "0261ca4e7fdfb77e2e317a08e724de4b6fdff68be2e2108bb46c4b697324ccb3",
+  "source_hashes": {
+    "experiments/knowledge_state_maintenance/__init__.py": "fd1d95d20eb398c4a591c49ebfb2f5126fa3684b4f57f4ba2469c1cab3ae8f5f",
+    "experiments/knowledge_state_maintenance/report.py": "335161750955c5de549a246f03fdd68e9a128cd490b61787096dfcd21f65cd27",
+    "experiments/knowledge_state_maintenance/run.py": "f3fc1f0cd91eafb3c13939e5ab7c5a53f43c28b35de23d5493fe4bd9e1b76f8d",
+    "experiments/knowledge_state_maintenance/runtime.py": "9257217c261b0976397a69b0477757991288d6a40f858fbc46bb1319d2e010b6",
+    "reproduction/PROTOCOL.md": "a185ccdbba8f85d5aee7bb1c53554496a78f208b84dd549883cb1bd347d96bc7",
+    "src/data/__init__.py": "b80c9ed6835a279f177e3278562ad2b4340c67edb27bd7f74901c7df5a23de0e",
+    "src/data/datasets.py": "2fbe208edc1f66901d02c7bba2c381ce9e05c19ba9e1e1427b42f45a093ba999",
+    "src/data/forget_sets.py": "4d48df66ad0e70a73a8402cbb6c1b8ac01b4e5dbe536ce7ce398560333ee81b9",
+    "src/data/hetionet.py": "6c00ba8fa0fe83fb09bca8ea169e94adb80afc2847089dfc38f17bc0e8484c17",
+    "src/data/primekg.py": "7326d68594a9a6b1e2d70fcefc9e6d8c19f8f841cb61ef36bc9ac06aad5f6b0c",
+    "src/evaluation/__init__.py": "e4fba28e97d69e1415c8d79cad6211241d6353069987fbb1c0de8cacd846d4ae",
+    "src/evaluation/metrics.py": "0a8535c1c8bdb76c7066d74ff3c39b1a82e0d483b01d12fe17eeeb5cc7bd83eb",
+    "src/evaluation/mia/__init__.py": "a30ceda1681c417d793c24763fc389aa7483d6defbf2fe6265a882b76ca30250",
+    "src/evaluation/mia/privacy_evaluator.py": "86648907edec1c3a845f9db19e680bf43725e495f533e87404d034f5874fd855",
+    "src/evaluation/retrain_reference.py": "35b920f923543affb8e664645c09f2a9450e5e2b200f6b0d65c5da5ad0e15877",
+    "src/evaluation/run_output_artifact.py": "f59d5f84fe2a0d9c8c4f5c7ed931c905ffffd2bbc198a43794c3159a2bbe04c9",
+    "src/hasi/__init__.py": "2c307d35359557c6460d84864290e4f51a1f538ef3b8a09a792f9337aeacfd90",
+    "src/hasi/anchor_stabilization/__init__.py": "364b24a7421ab33b68fb191b5bb964543ab8da828a647b829d470e5e6a2ed8af",
+    "src/hasi/anchor_stabilization/anchor_loss.py": "268aaaaeb43d17ec2ffc75abdb1abdb2a004912262bbcad9da1ce13cffc70e1c",
+    "src/hasi/anchor_stabilization/anchor_manager.py": "7acf0f5b062783f8de65f549f37f1027b4a58d2ad4b7f2bd3e78207532b9f162",
+    "src/hasi/dar/__init__.py": "2b34f71221b016141f1c509327da22b1c212f58590d42156c2d031dba72e2f59",
+    "src/hasi/dar/pipeline.py": "ae53bc2d1129b6aa69f56693f16800339ed5107734d9b329b496744bb1e8ee42",
+    "src/hasi/erf_partitioning/__init__.py": "c058a1ccd945277179c610046a9b90895a43a6baac4b15e300bea487b68c7f4d",
+    "src/hasi/erf_partitioning/ppr.py": "1a147a6876a7bbc6c86144d6b595bc60b9654e7a29d882c86e9414a5c26df044",
+    "src/hasi/graph_compute.py": "b370c86d965bb29b5900acfcaddae781e9ae565f250a00ce9af6e9cbc42da6c7",
+    "src/hasi/hub_identification/__init__.py": "1dd6743b7f86fb5af7e87c43ba3729e9811ff84baa3f83bf83bc67fdaed49ea8",
+    "src/hasi/hub_identification/cache.py": "aff718f64e1563221f599f8868614b0f623d837fe3e7cf6d1bdb479e2b57c5b6",
+    "src/hasi/hub_identification/hub_scorer.py": "a4489e8442cbc47e399a7b1719f0cb8289ad2da30bfe3e50046574747bf36c81",
+    "src/hasi/structural_inpainting/__init__.py": "6cb255d2d936d62623696c62bfec0e5303e04fae7e64464534c3a800c2fbe0c3",
+    "src/hasi/structural_inpainting/inpainter.py": "578d49297c94694cfe90250032d6734239b09dc9d910fe8de059efbac1ad7ca0",
+    "src/hasi/unlearner.py": "85c9d1d2950191122fb581ceb2fb13019f849fb7618aa3d0606baa5cba7de164",
+    "tests/test_knowledge_state_maintenance.py": "4fce40412f789483df1d6c5c228ea2c6dac88a382a3b724c0803f6692f1ae349"
+  },
+  "provenance": [
+    {
+      "original_path": "experiments/maintenance_20260911/__init__.py",
+      "packaged_path": "experiments/knowledge_state_maintenance/__init__.py",
+      "original_sha256": "fd1d95d20eb398c4a591c49ebfb2f5126fa3684b4f57f4ba2469c1cab3ae8f5f",
+      "packaged_sha256": "fd1d95d20eb398c4a591c49ebfb2f5126fa3684b4f57f4ba2469c1cab3ae8f5f",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "experiments/maintenance_20260911/report.py",
+      "packaged_path": "experiments/knowledge_state_maintenance/report.py",
+      "original_sha256": "335161750955c5de549a246f03fdd68e9a128cd490b61787096dfcd21f65cd27",
+      "packaged_sha256": "335161750955c5de549a246f03fdd68e9a128cd490b61787096dfcd21f65cd27",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "experiments/maintenance_20260911/run.py",
+      "packaged_path": "experiments/knowledge_state_maintenance/run.py",
+      "original_sha256": "1bd7b1015fb1e6c9233f22b3ad0d923c2f7077b133929593c415f94e3e38bb42",
+      "packaged_sha256": "f3fc1f0cd91eafb3c13939e5ab7c5a53f43c28b35de23d5493fe4bd9e1b76f8d",
+      "change": "Module/output paths renamed and log paths made project-relative; algorithms unchanged."
+    },
+    {
+      "original_path": "experiments/maintenance_20260911/runtime.py",
+      "packaged_path": "experiments/knowledge_state_maintenance/runtime.py",
+      "original_sha256": "f13bbbb3ed31fbb2be8100720fadb9b150e7b75d0b17cfae63417e8dd5896970",
+      "packaged_sha256": "9257217c261b0976397a69b0477757991288d6a40f858fbc46bb1319d2e010b6",
+      "change": "Module/output paths renamed and log paths made project-relative; algorithms unchanged."
+    },
+    {
+      "original_path": "followup_20260911/PROTOCOL.md",
+      "packaged_path": "reproduction/PROTOCOL.md",
+      "original_sha256": "a185ccdbba8f85d5aee7bb1c53554496a78f208b84dd549883cb1bd347d96bc7",
+      "packaged_sha256": "a185ccdbba8f85d5aee7bb1c53554496a78f208b84dd549883cb1bd347d96bc7",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/data/__init__.py",
+      "packaged_path": "src/data/__init__.py",
+      "original_sha256": "b80c9ed6835a279f177e3278562ad2b4340c67edb27bd7f74901c7df5a23de0e",
+      "packaged_sha256": "b80c9ed6835a279f177e3278562ad2b4340c67edb27bd7f74901c7df5a23de0e",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/data/datasets.py",
+      "packaged_path": "src/data/datasets.py",
+      "original_sha256": "2fbe208edc1f66901d02c7bba2c381ce9e05c19ba9e1e1427b42f45a093ba999",
+      "packaged_sha256": "2fbe208edc1f66901d02c7bba2c381ce9e05c19ba9e1e1427b42f45a093ba999",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/data/forget_sets.py",
+      "packaged_path": "src/data/forget_sets.py",
+      "original_sha256": "4d48df66ad0e70a73a8402cbb6c1b8ac01b4e5dbe536ce7ce398560333ee81b9",
+      "packaged_sha256": "4d48df66ad0e70a73a8402cbb6c1b8ac01b4e5dbe536ce7ce398560333ee81b9",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/data/hetionet.py",
+      "packaged_path": "src/data/hetionet.py",
+      "original_sha256": "6c00ba8fa0fe83fb09bca8ea169e94adb80afc2847089dfc38f17bc0e8484c17",
+      "packaged_sha256": "6c00ba8fa0fe83fb09bca8ea169e94adb80afc2847089dfc38f17bc0e8484c17",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/data/primekg.py",
+      "packaged_path": "src/data/primekg.py",
+      "original_sha256": "7326d68594a9a6b1e2d70fcefc9e6d8c19f8f841cb61ef36bc9ac06aad5f6b0c",
+      "packaged_sha256": "7326d68594a9a6b1e2d70fcefc9e6d8c19f8f841cb61ef36bc9ac06aad5f6b0c",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/evaluation/__init__.py",
+      "packaged_path": "src/evaluation/__init__.py",
+      "original_sha256": "e4fba28e97d69e1415c8d79cad6211241d6353069987fbb1c0de8cacd846d4ae",
+      "packaged_sha256": "e4fba28e97d69e1415c8d79cad6211241d6353069987fbb1c0de8cacd846d4ae",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/evaluation/metrics.py",
+      "packaged_path": "src/evaluation/metrics.py",
+      "original_sha256": "0a8535c1c8bdb76c7066d74ff3c39b1a82e0d483b01d12fe17eeeb5cc7bd83eb",
+      "packaged_sha256": "0a8535c1c8bdb76c7066d74ff3c39b1a82e0d483b01d12fe17eeeb5cc7bd83eb",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/evaluation/mia/__init__.py",
+      "packaged_path": "src/evaluation/mia/__init__.py",
+      "original_sha256": "a30ceda1681c417d793c24763fc389aa7483d6defbf2fe6265a882b76ca30250",
+      "packaged_sha256": "a30ceda1681c417d793c24763fc389aa7483d6defbf2fe6265a882b76ca30250",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/evaluation/mia/privacy_evaluator.py",
+      "packaged_path": "src/evaluation/mia/privacy_evaluator.py",
+      "original_sha256": "86648907edec1c3a845f9db19e680bf43725e495f533e87404d034f5874fd855",
+      "packaged_sha256": "86648907edec1c3a845f9db19e680bf43725e495f533e87404d034f5874fd855",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/evaluation/retrain_reference.py",
+      "packaged_path": "src/evaluation/retrain_reference.py",
+      "original_sha256": "35b920f923543affb8e664645c09f2a9450e5e2b200f6b0d65c5da5ad0e15877",
+      "packaged_sha256": "35b920f923543affb8e664645c09f2a9450e5e2b200f6b0d65c5da5ad0e15877",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/evaluation/run_output_artifact.py",
+      "packaged_path": "src/evaluation/run_output_artifact.py",
+      "original_sha256": "f59d5f84fe2a0d9c8c4f5c7ed931c905ffffd2bbc198a43794c3159a2bbe04c9",
+      "packaged_sha256": "f59d5f84fe2a0d9c8c4f5c7ed931c905ffffd2bbc198a43794c3159a2bbe04c9",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/hasi/__init__.py",
+      "packaged_path": "src/hasi/__init__.py",
+      "original_sha256": "2c307d35359557c6460d84864290e4f51a1f538ef3b8a09a792f9337aeacfd90",
+      "packaged_sha256": "2c307d35359557c6460d84864290e4f51a1f538ef3b8a09a792f9337aeacfd90",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/hasi/anchor_stabilization/__init__.py",
+      "packaged_path": "src/hasi/anchor_stabilization/__init__.py",
+      "original_sha256": "364b24a7421ab33b68fb191b5bb964543ab8da828a647b829d470e5e6a2ed8af",
+      "packaged_sha256": "364b24a7421ab33b68fb191b5bb964543ab8da828a647b829d470e5e6a2ed8af",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/hasi/anchor_stabilization/anchor_loss.py",
+      "packaged_path": "src/hasi/anchor_stabilization/anchor_loss.py",
+      "original_sha256": "268aaaaeb43d17ec2ffc75abdb1abdb2a004912262bbcad9da1ce13cffc70e1c",
+      "packaged_sha256": "268aaaaeb43d17ec2ffc75abdb1abdb2a004912262bbcad9da1ce13cffc70e1c",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/hasi/anchor_stabilization/anchor_manager.py",
+      "packaged_path": "src/hasi/anchor_stabilization/anchor_manager.py",
+      "original_sha256": "7acf0f5b062783f8de65f549f37f1027b4a58d2ad4b7f2bd3e78207532b9f162",
+      "packaged_sha256": "7acf0f5b062783f8de65f549f37f1027b4a58d2ad4b7f2bd3e78207532b9f162",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/hasi/dar/__init__.py",
+      "packaged_path": "src/hasi/dar/__init__.py",
+      "original_sha256": "2b34f71221b016141f1c509327da22b1c212f58590d42156c2d031dba72e2f59",
+      "packaged_sha256": "2b34f71221b016141f1c509327da22b1c212f58590d42156c2d031dba72e2f59",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/hasi/dar/pipeline.py",
+      "packaged_path": "src/hasi/dar/pipeline.py",
+      "original_sha256": "ae53bc2d1129b6aa69f56693f16800339ed5107734d9b329b496744bb1e8ee42",
+      "packaged_sha256": "ae53bc2d1129b6aa69f56693f16800339ed5107734d9b329b496744bb1e8ee42",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/hasi/erf_partitioning/__init__.py",
+      "packaged_path": "src/hasi/erf_partitioning/__init__.py",
+      "original_sha256": "c058a1ccd945277179c610046a9b90895a43a6baac4b15e300bea487b68c7f4d",
+      "packaged_sha256": "c058a1ccd945277179c610046a9b90895a43a6baac4b15e300bea487b68c7f4d",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/hasi/erf_partitioning/ppr.py",
+      "packaged_path": "src/hasi/erf_partitioning/ppr.py",
+      "original_sha256": "1a147a6876a7bbc6c86144d6b595bc60b9654e7a29d882c86e9414a5c26df044",
+      "packaged_sha256": "1a147a6876a7bbc6c86144d6b595bc60b9654e7a29d882c86e9414a5c26df044",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/hasi/graph_compute.py",
+      "packaged_path": "src/hasi/graph_compute.py",
+      "original_sha256": "b370c86d965bb29b5900acfcaddae781e9ae565f250a00ce9af6e9cbc42da6c7",
+      "packaged_sha256": "b370c86d965bb29b5900acfcaddae781e9ae565f250a00ce9af6e9cbc42da6c7",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/hasi/hub_identification/__init__.py",
+      "packaged_path": "src/hasi/hub_identification/__init__.py",
+      "original_sha256": "1dd6743b7f86fb5af7e87c43ba3729e9811ff84baa3f83bf83bc67fdaed49ea8",
+      "packaged_sha256": "1dd6743b7f86fb5af7e87c43ba3729e9811ff84baa3f83bf83bc67fdaed49ea8",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/hasi/hub_identification/cache.py",
+      "packaged_path": "src/hasi/hub_identification/cache.py",
+      "original_sha256": "aff718f64e1563221f599f8868614b0f623d837fe3e7cf6d1bdb479e2b57c5b6",
+      "packaged_sha256": "aff718f64e1563221f599f8868614b0f623d837fe3e7cf6d1bdb479e2b57c5b6",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/hasi/hub_identification/hub_scorer.py",
+      "packaged_path": "src/hasi/hub_identification/hub_scorer.py",
+      "original_sha256": "a4489e8442cbc47e399a7b1719f0cb8289ad2da30bfe3e50046574747bf36c81",
+      "packaged_sha256": "a4489e8442cbc47e399a7b1719f0cb8289ad2da30bfe3e50046574747bf36c81",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/hasi/structural_inpainting/__init__.py",
+      "packaged_path": "src/hasi/structural_inpainting/__init__.py",
+      "original_sha256": "6cb255d2d936d62623696c62bfec0e5303e04fae7e64464534c3a800c2fbe0c3",
+      "packaged_sha256": "6cb255d2d936d62623696c62bfec0e5303e04fae7e64464534c3a800c2fbe0c3",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/hasi/structural_inpainting/inpainter.py",
+      "packaged_path": "src/hasi/structural_inpainting/inpainter.py",
+      "original_sha256": "578d49297c94694cfe90250032d6734239b09dc9d910fe8de059efbac1ad7ca0",
+      "packaged_sha256": "578d49297c94694cfe90250032d6734239b09dc9d910fe8de059efbac1ad7ca0",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "src/hasi/unlearner.py",
+      "packaged_path": "src/hasi/unlearner.py",
+      "original_sha256": "85c9d1d2950191122fb581ceb2fb13019f849fb7618aa3d0606baa5cba7de164",
+      "packaged_sha256": "85c9d1d2950191122fb581ceb2fb13019f849fb7618aa3d0606baa5cba7de164",
+      "change": "byte-identical"
+    },
+    {
+      "original_path": "tests/test_maintenance_20260911.py",
+      "packaged_path": "tests/test_knowledge_state_maintenance.py",
+      "original_sha256": "56a401c815dd4028ea568559f37322da609db52b0374d93fe77b5322d554d38e",
+      "packaged_sha256": "4fce40412f789483df1d6c5c228ea2c6dac88a382a3b724c0803f6692f1ae349",
+      "change": "Module/output paths renamed and log paths made project-relative; algorithms unchanged."
+    }
+  ],
+  "omitted_unneeded_historical_source_paths": [
+    "src/baselines/__init__.py",
+    "src/baselines/baselines.py",
+    "src/baselines/gif.py",
+    "src/baselines/grapheraser.py",
+    "src/baselines/official.py",
+    "src/baselines/official_sources.py",
+    "src/models/__init__.py",
+    "src/models/base_artifacts.py",
+    "src/models/gnn.py",
+    "src/models/trainer.py",
+    "src/utils/__init__.py",
+    "src/utils/timer.py"
+  ]
+}

@@ -1,0 +1,14 @@
+# Versions recorded for the 2026-09-11 experiment underlying the paper.
+# Install the CUDA 12.8 torch wheel first; see docs/ENVIRONMENT.md.
+torch==2.9.0
+torch-geometric==2.8.0
+numpy==1.26.4
+pandas==2.2.2
+scipy==1.16.3
+scikit-learn==1.7.2
+matplotlib==3.10.6
+
+# Needed by the frozen source/tests, but their historical versions were not
+# recorded. These are intentionally unpinned, not historical version claims.
+networkx
+pytest

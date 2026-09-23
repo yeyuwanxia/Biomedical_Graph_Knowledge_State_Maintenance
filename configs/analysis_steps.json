@@ -1,0 +1,8 @@
+{
+  "description": "New-run summaries from the frozen report and current-run relation probabilities only.",
+  "commands": [
+    [
+      "scripts/summarize_paper.py"
+    ]
+  ]
+}
