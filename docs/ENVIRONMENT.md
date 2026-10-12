@@ -1,6 +1,6 @@
 # 安装与运行环境
 
-本说明对应论文使用的 2026-09-11 实验源码。下表来自该批次的 `development_freeze.json` 和 `validation/environment_and_tests.json`；这里只提取软件配置，不附带这两个历史运行记录文件。
+下表列出论文实验记录的核心软件版本，提取自 `development_freeze.json` 和 `validation/environment_and_tests.json`；本包不附带这两个原运行记录文件。
 
 | 项目 | 该批次已记录的配置 |
 | --- | --- |
@@ -16,7 +16,7 @@
 | 可见 GPU | `CUDA_VISIBLE_DEVICES=0,1,2` |
 | CPU 线程 | 每个 worker 4 线程 |
 
-原执行协议写明三张 T4、每张卡一个 worker。完整 CUDA 驱动版本、Linux 发行版、CPU 型号、内存容量以及 NetworkX、pytest 的精确版本未由上述记录完整固定，因此不从其他批次补填。本包不附带旧批次环境数据。
+执行协议采用三张 T4、每张卡一个 worker。完整历史硬件、系统、驱动和依赖锁记录未全部保留；Adam 其余有效选项未单独记录。本仓库不包含原实验节点缓存、模型检查点和逐对象预测数组。
 
 ## 建立新环境
 

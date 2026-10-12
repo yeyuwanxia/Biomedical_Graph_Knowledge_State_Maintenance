@@ -1,6 +1,6 @@
 # 论文实验与代码对应说明
 
-本说明依据 `HASI_KBS_20260920_FULL.zip` 内的 `main.tex`。当前论文的正式实验为 Hetionet 上的实体类型分类（node）和 Compound–treats–Disease 关系预测（relation），入口为 `experiments/knowledge_state_maintenance/`。历史 PubMed、PrimeKG、旧 HASI 消融及 `supplementary_experiments/` 批次不属于这版论文的结果来源。
+本仓库实现论文中的 Hetionet 实体类型分类（node）和 Compound–treats–Disease 关系预测（relation）实验，入口为 `experiments/knowledge_state_maintenance/`。
 
 本包只包含代码、协议、配置和说明。下文提到的 `data/`、模型、预测数组、统计 CSV、审计 JSON 和图表都是读者准备数据并运行后生成的文件，压缩包不携带这些文件。仅有代码不能直接重放原论文结果；数据准备见 `DATA_PREPARATION.md`，执行入口与环境安装以包根 README 为准。
 
@@ -44,30 +44,33 @@ python -m experiments.knowledge_state_maintenance.run report
 
 ## 3. 正文和附录表格对应
 
-以下使用论文 LaTeX 标签标识表格，避免排版导致表号变化。
+以下按当前论文的 LaTeX 标签对应表格，避免排版导致表号变化。配置表来自协议或配置文件；统计表来自运行后生成的 `reproduction/tables/` 和 `reproduction/paper_tables/`。
 
-| 论文表格或结果 | 原始统计来源（均在运行后生成） | 筛选/汇总方式 |
+| 论文表格或结果 | 配置或统计来源 | 筛选/汇总方式 |
 | --- | --- | --- |
-| 主比较 `tab:maintenance-main` | `tables/metrics_summary.csv`、`metrics_per_split.csv` | Tuned 方法的 selected/150，加 Input-only 的 selected/0、Matched-Retrain 的 selected/300；`quality`、`retrain_js`、`first_use_s`。 |
-| 配对结果 `tab:maintenance-paired` | `tables/paired_intervals.csv`、`metrics_per_split.csv` | 包含 FT−Input-only、各参考方法−FT 等对比；逐 split 配对后计算区间，不能相减两个非配对 CI。 |
-| 撤回与继续训练交互 `tab:maintenance-interaction` | `tables/withdrawal_interaction.csv` | `(Fixed-FT−Input-only)−(Continue-FT−Original)`；固定 150 步；对五个 split 值计算配对区间。 |
-| 强度机制 `tab:maintenance-mechanism` | `tables/metrics_per_split.csv`、`transitions_per_split.csv` | Fixed-FT 和 Fixed-Full-old-a0.1/a1/a10，fixed/150；转移行 `class_id=-1`。 |
-| 全 11 类差异 `tab:maintenance-classes` | `tables/classes_per_split.csv`、`class_tests.csv` | Tuned-Full-old−Tuned-FT，selected/150；配对区间及 11 类 Holm 校正。 |
-| 计时 `tab:maintenance-cost` | `tables/metrics_summary.csv`、`metrics_per_split.csv` | `first_preparation_s`、`cache_ready_update_s`、`first_use_s`、`service_end_to_end_s`；同主比较筛选。 |
-| 全类 PRF `tab:supp-class-prf` | `tables/classes_summary.csv`、`classes_per_split.csv` | Tuned-FT、Tuned-Full-old、Tuned-Random-all 的 precision/recall/F1 分别平均；不可由平均 precision/recall 再算 F1。 |
-| 节点预测转移 `tab:supp-node-transitions` | `tables/transitions_per_split.csv` | selected/150、`class_id=-1`；区分“相对于 FT 的分歧”和“相对于 Original 的保护/纠错”。 |
-| 目标与选择政策 `tab:supp-target-selection` | `tables/metrics_per_split.csv` | 同强度 Full-input−Full-old；Full-old−Structure；Coverage 比较须用固定协议。 |
-| 参考类别组成 `tab:supp-reference-composition` | `tables/reference_composition_per_split.csv` | 按 family、Primary/Secondary、class 分组；同正式分层平均。 |
-| 参考度分布 `tab:supp-reference-degree` | 同上 | `mean_degree`、`degree_p25`、`degree_median`、`degree_p75`；它们是组内统计量的平均，不是把参考节点合并后重算的分位数。 |
-| 开发搜索成本 `tab:supp-development-cost` | `tables/development_search_costs.csv` | 仅完整重新开发后有数据；计算方法见下一节。 |
-| 关系辅助指标 `tab:supp-relation-metrics` | `tables/metrics_summary.csv`、`metrics_per_split.csv` | `task=relation`；AUROC、Brier、NLL；SD 来自五个 split 的样本 SD。 |
-| 撤回关系分数响应 | `tables/metrics_per_split.csv`；`formal/requests/relation*/q*/context.npz` 与方法预测 NPZ | `withdrawn_score`、`withdrawn_change`、`withdrawn_post_input_change`；原始均值和绝对变化还需原始数组，见下文。 |
-| 三次重训参考变异 | `tables/retrain_variability.csv` | 每个 split 首个 base 的首个请求，合计五个请求；不能将此子集当作全部 20 个关系请求。 |
+| 比较条件 `tab:study-controls` | `reproduction/PROTOCOL.md`、`run.py` 的 `formal_specs` | Original、Input-only、Continue-FT、Fixed-FT，以及参考目标与 Fixed/Tuned 标签。 |
+| 数据与任务 `tab:dataset-tasks` | `docs/DATA_PREPARATION.md`、`runtime.py` 的数据构建函数 | 核对节点、消息边、特征维度、任务划分和撤回请求；图规模按论文的去重、自环口径统计。 |
+| 训练设置 `tab:core-settings` | `configs/paper_protocol.json`、`reproduction/PROTOCOL.md`、`runtime.py` | 模型、优化器、训练预算、九候选搜索、参考配额与执行设置。 |
+| 选定配置 `tab:selected-configurations` | `configs/paper_protocol.json` 的 `tasks.*.selected_configs` | 两任务各方法的学习率和约束乘子；paper 模式直接使用，redevelop 模式重新选择并记录差异。 |
+| 工程判据 `tab:engineering-criteria` | `reproduction/PROTOCOL.md`、`report.py` 的决策汇总 | 预先规定的质量、JS 与缓存更新耗时组合条件，按 Tuned 程序评估。 |
+| 主比较 `tab:maintenance-main` | `tables/metrics_summary.csv`、`metrics_per_split.csv` | Tuned 方法 selected/150，加 Input-only selected/0、Matched-Retrain selected/300；质量与 `retrain_js`。 |
+| 配对结果 `tab:maintenance-paired` | `tables/paired_intervals.csv`、`paper_tables/paired_contrasts_intervals.csv` | 逐 split 计算方法差值与区间；质量差转为百分点，不能相减两个非配对 CI。 |
+| 撤回与继续训练交互 `tab:maintenance-interaction` | `tables/withdrawal_interaction.csv`、`paper_tables/withdrawal_interaction_intervals.csv` | `(Fixed-FT−Input-only)−(Continue-FT−Original)`；固定 150 步，对五个 split 值计算配对区间。 |
+| 强度机制 `tab:maintenance-mechanism` | `tables/metrics_per_split.csv`、`transitions_per_split.csv` | Fixed-FT 与 Fixed-Full-old-a0.1/a1/a10，fixed/150；节点转移行 `class_id=-1`。 |
+| 保护收益与纠错成本 `tab:protection-correction` | `paper_tables/protection_correction_per_split.csv`、`protection_correction_intervals.csv` | 分别比较 Fixed 默认约束与 Tuned Full-old 对应的 FT；保护收益减纠错成本得到净正确数量差。 |
+| 类别成本分布 `tab:class-cost-summary` | `tables/classes_per_split.csv`、`class_tests.csv` | Tuned-Full-old−Tuned-FT，selected/150；展示四类 F1 差，其余七类求和，十一类差的平均对应 Macro-F1 差。 |
+| 目标与选择政策 `tab:supp-target-selection` | `paper_tables/paired_contrasts_intervals.csv`、`tables/metrics_per_split.csv` | Fixed 同强度目标、结构和覆盖对照，以及 Tuned Full-old−Structure；分别使用 fixed/150 与 selected/150。 |
+| 计时 `tab:maintenance-cost` | `tables/metrics_summary.csv`、`metrics_per_split.csv` | `first_preparation_s`、`cache_ready_update_s`、`first_use_s`、`service_end_to_end_s`；方法与输出模式同主比较。 |
+| 附录全 11 类差异 `tab:maintenance-classes` | `tables/classes_per_split.csv`、`class_tests.csv` | Tuned-Full-old−Tuned-FT，selected/150；配对区间及 11 类 Holm 校正。 |
+| 附录关系辅助指标 `tab:supp-relation-metrics` | `tables/metrics_summary.csv`、`metrics_per_split.csv` | `task=relation`；方法、预算与输出模式同主比较，包含 Input-only 和 Matched-Retrain；AUROC、Brier、NLL，SD 来自五个 split 的样本 SD。 |
+| 附录参考度分布 `tab:supp-reference-degree` | `tables/reference_composition_per_split.csv` | 节点任务按政策与 Primary/Secondary 汇总 `mean_degree`，再平均五个 split；Full-input 与 Full-old 使用相同参考成员。 |
+| 撤回关系分数响应 | `tables/metrics_per_split.csv`；`formal/requests/relation*/q*/context.npz` 与方法预测 NPZ | 有符号变化与绝对变化分别计算，再按请求、base、split 汇总，见下文。 |
+| 关系三次重训参考变异 | `tables/retrain_variability.csv`、`paper_tables/retrain_reference_intervals.csv` | 每个 split 首个 base 的首个请求，合计五个关系请求；该子集不能代表全部二十个关系请求。 |
 
 `scripts/summarize_paper.py` 为本次整理新增的表格摘要工具，不在本包 32 份原执行源码的依赖子集中。它读取运行后生成的表格；导出目录为 `reproduction/paper_tables/`：
 
 - `metrics_split_intervals.csv`、`classes_split_intervals.csv`、`transitions_split_intervals.csv`、`reference_composition_split_intervals.csv`：各 split 表的均值、样本 SD 和区间。
-- `paired_contrasts_per_split.csv` / `paired_contrasts_intervals.csv`：正文配对比较及附录目标、结构和覆盖比较；配对差值正负 split 数一并给出。
+- `paired_contrasts_per_split.csv` / `paired_contrasts_intervals.csv`：正文配对比较及目标、结构和覆盖比较；配对差值正负 split 数一并给出。
 - `withdrawal_interaction_per_split.csv` / `withdrawal_interaction_intervals.csv`：四条件比较，从指标表重建并核对冻结交互表。
 - `protection_correction_per_split.csv` / `protection_correction_intervals.csv`：固定和调优协议的保护收益、纠错差值及净正确数量差。
 - `relation_withdrawal_per_request.csv` / `relation_withdrawal_per_split.csv` / `relation_withdrawal_intervals.csv`：撤回关系有符号及绝对响应。
@@ -118,8 +121,8 @@ python scripts/reproduce.py --stage analysis --protocol paper
 
 如果前面使用的是 `redevelop`，此处也须指定 `--protocol redevelop`。该阶段运行新增的 `scripts/summarize_paper.py`，只读取本轮产物生成摘要，不训练或选择模型。报告原始分层表由冻结 `report.py` 生成，它会逐运行读取预测数组重新计算质量指标、核对执行时记录，并检验正式运行和源码身份。
 
-旧工程的独立 `review/` 和 `validation/` 脚本未打入此包。它们包含独立逐对象指标复核、逐节点分歧导出、关系 raw 表交叉核查以及原批次状态检查。这些深层复核不应被描述为已随包提供或已在本轮执行；重新训练后保存的原始数组仍可用于后续独立核查。包内没有依赖历史 `finalization_status.json` 的运行入口，也不需导入旧结果以获得完成状态。
+本包提供实验执行、分层汇总和表格整理工具；独立逐对象复核与原运行状态检查工具未包含。新运行保存的预测数组可用于进一步独立核查。
 
-旧 `supplementary_experiments/` 分析器及旧 HASI 基线/消融属于其他实验批次，不是当前论文的复现入口。本包仅保留当前维护实验所需的 32 份执行源码的依赖子集；模块和输出目录已去掉日期，训练/统计算法未改，原始与当前哈希见 EXPERIMENT_SOURCE_MANIFEST.json；其他历史模块与实验入口已裁去。
+本包保留维护实验所需的 32 份执行源码及协议文件，原始与打包后的哈希见 `EXPERIMENT_SOURCE_MANIFEST.json`；训练与统计算法保持一致。
 
 正式运行失败、预测产物缺失或审计未通过时，应先解决具体错误，不应手工填写完成状态或复制旧表格跳过校验。包内实现测试检查代码行为，不替代真实数据上的完整复现实验；打包时未重新执行论文完整训练。
