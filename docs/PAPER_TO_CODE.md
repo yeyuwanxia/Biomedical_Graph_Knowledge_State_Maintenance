@@ -42,11 +42,11 @@ python -m experiments.knowledge_state_maintenance.run report
 
 这个命令需要已完成的正式运行、数据缓存、release 与 source hash，不能对空代码包直接运行。训练输出保存在包内 `reproduction/` 下，执行前应预留足够存储空间。
 
-## 3. 正文和附录表格对应
+## 3. 正文和附录图表对应
 
-以下按当前论文的 LaTeX 标签对应表格，避免排版导致表号变化。配置表来自协议或配置文件；统计表来自运行后生成的 `reproduction/tables/` 和 `reproduction/paper_tables/`。
+以下按当前论文的 LaTeX 标签对应图表，避免排版导致图表编号变化。配置表来自协议或配置文件；统计表来自运行后生成的 `reproduction/tables/` 和 `reproduction/paper_tables/`。
 
-| 论文表格或结果 | 配置或统计来源 | 筛选/汇总方式 |
+| 论文图表或结果 | 配置或统计来源 | 筛选/汇总方式 |
 | --- | --- | --- |
 | 比较条件 `tab:study-controls` | `reproduction/PROTOCOL.md`、`run.py` 的 `formal_specs` | Original、Input-only、Continue-FT、Fixed-FT，以及参考目标与 Fixed/Tuned 标签。 |
 | 数据与任务 `tab:dataset-tasks` | `docs/DATA_PREPARATION.md`、`runtime.py` 的数据构建函数 | 核对节点、消息边、特征维度、任务划分和撤回请求；图规模按论文的去重、自环口径统计。 |
@@ -56,9 +56,9 @@ python -m experiments.knowledge_state_maintenance.run report
 | 主比较 `tab:maintenance-main` | `tables/metrics_summary.csv`、`metrics_per_split.csv` | Tuned 方法 selected/150，加 Input-only selected/0、Matched-Retrain selected/300；质量与 `retrain_js`。 |
 | 配对结果 `tab:maintenance-paired` | `tables/paired_intervals.csv`、`paper_tables/paired_contrasts_intervals.csv` | 逐 split 计算方法差值与区间；质量差转为百分点，不能相减两个非配对 CI。 |
 | 撤回与继续训练交互 `tab:maintenance-interaction` | `tables/withdrawal_interaction.csv`、`paper_tables/withdrawal_interaction_intervals.csv` | `(Fixed-FT−Input-only)−(Continue-FT−Original)`；固定 150 步，对五个 split 值计算配对区间。 |
-| 强度机制 `tab:maintenance-mechanism` | `tables/metrics_per_split.csv`、`transitions_per_split.csv` | Fixed-FT 与 Fixed-Full-old-a0.1/a1/a10，fixed/150；节点转移行 `class_id=-1`。 |
-| 保护收益与纠错成本 `tab:protection-correction` | `paper_tables/protection_correction_per_split.csv`、`protection_correction_intervals.csv` | 分别比较 Fixed 默认约束与 Tuned Full-old 对应的 FT；保护收益减纠错成本得到净正确数量差。 |
-| 类别成本分布 `tab:class-cost-summary` | `tables/classes_per_split.csv`、`class_tests.csv` | Tuned-Full-old−Tuned-FT，selected/150；展示四类 F1 差，其余七类求和，十一类差的平均对应 Macro-F1 差。 |
+| 强度机制（图4(a–e)）`fig:mechanism-tradeoff` | `tables/metrics_per_split.csv`、`transitions_per_split.csv` | Fixed-FT 与 Fixed-Full-old-a0.1/a1/a10，fixed/150；节点转移行 `class_id=-1`。 |
+| 保护收益与纠错成本（图4(f–g)）`fig:mechanism-tradeoff` | `paper_tables/protection_correction_per_split.csv`、`protection_correction_intervals.csv` | 分别比较 Fixed 默认约束与 Tuned Full-old 对应的 FT；保护收益减纠错成本得到净正确数量差。 |
+| 类别成本分布（图5）`fig:classwise-cost`；完整11类数值见表A.1 `tab:maintenance-classes` | `tables/classes_per_split.csv`、`class_tests.csv` | Tuned-Full-old−Tuned-FT，selected/150；展示四类 F1 差，其余七类求和，十一类差的平均对应 Macro-F1 差。 |
 | 目标与选择政策 `tab:supp-target-selection` | `paper_tables/paired_contrasts_intervals.csv`、`tables/metrics_per_split.csv` | Fixed 同强度目标、结构和覆盖对照，以及 Tuned Full-old−Structure；分别使用 fixed/150 与 selected/150。 |
 | 计时 `tab:maintenance-cost` | `tables/metrics_summary.csv`、`metrics_per_split.csv` | `first_preparation_s`、`cache_ready_update_s`、`first_use_s`、`service_end_to_end_s`；方法与输出模式同主比较。 |
 | 附录全 11 类差异 `tab:maintenance-classes` | `tables/classes_per_split.csv`、`class_tests.csv` | Tuned-Full-old−Tuned-FT，selected/150；配对区间及 11 类 Holm 校正。 |
