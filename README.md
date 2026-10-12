@@ -2,22 +2,22 @@
 
 生物医学图知识状态维护：节点分类、关系预测与表示约束机制实验代码。
 
-对应 `HASI_KBS_20260920_FULL.zip` / `HASI_KBS_20260920.pdf`：
+对应论文：
 **Knowledge-State Maintenance in Biomedical Graph Learning: An Empirical Study of Representation Constraints**。
 
-本包只复现这版论文的 Hetionet 节点分类、Compound–treats–Disease 关系预测，以及 FT / Matched-Retrain / 表示约束方法的机制与调优比较。**不包含最初 HASI 与旧基线的实验入口、旧模块消融配置、数据集、模型权重、训练日志、预测数组或实验结果。** 输入与结果文件均由用户运行后在本地生成。
+本仓库提供 Hetionet 实体类型分类、Compound–treats–Disease 关系预测，以及 FT / Matched-Retrain / 表示约束方法的机制与调优比较代码。**不包含数据集、模型权重、训练日志、预测数组或实验结果。** 输入与结果文件由使用者准备或运行后生成。
 
 ## 内容与版本
 
 - `experiments/knowledge_state_maintenance/`：论文对应的冻结训练、选参、正式运行和汇总代码。
-- `src/`：上述代码的依赖闭包，按用户要求同步模块/输出路径命名。当前模型定义于 `runtime.Model`，不使用旧 `src/models` 或旧基线目录。
+- `src/`：实验代码所需的共用实现；当前模型定义于 `runtime.Model`。
 - `reproduction/PROTOCOL.md`：原执行前协议，本目录打包时仅有该说明文件。
 - `configs/paper_protocol.json`：开发候选、论文采用的超参数、随机种子与复现实验规模；不含开发验证分数、正式指标或预测。
 - `scripts/`：新增的数据准备、可变GPU数量调度、统计整理和包完整性检查工具。
 - `tests/`：原8项实现测试，以及新增工具的小型合成测试。
 - `docs/`：安装环境、数据准备和论文实验与代码对应说明。
 
-历史快照共44份文件；本包选取实际依赖的 **32份文件（31份Python及1份协议）**，排除旧 `src/baselines/`、`src/models/`、`src/utils/` 的12份无依赖文件。`EXPERIMENT_SOURCE_MANIFEST.json`记录原始路径/哈希、改名后路径/哈希以及改名范围；改名涉及模块引用，训练与统计算法未改。新增包装脚本与说明另行标识。`src`中仍有通过包初始化间接导入的历史共用实现，保留这些依赖不表示本文重新比较旧方法。
+论文实验实现包含 **32份文件（31份Python及1份协议）**。`EXPERIMENT_SOURCE_MANIFEST.json`记录原始与打包后的路径、哈希和模块命名调整，训练与统计算法保持一致；包装脚本与说明另行标识。
 
 ## 1. 校验代码包
 
@@ -78,7 +78,7 @@ CUDA_VISIBLE_DEVICES=0,1,2 python scripts/reproduce.py --stage all --protocol pa
 
 沿用 `configs/paper_protocol.json` 中论文已确定的配置，运行节点20个base/40个请求、关系10个base/20个请求及规定参考重复/额外重训。会进行GPU检查、生成本次输入和新manifest，但不会重新执行开发选参或样本量估计。
 
-**paper方式不能重新产生附录的开发搜索成本。** 运行后报告会注明该限制，空的开发成本表不代表成本为零。不要混用两种方式的部分产物；比较两种方式应分别解压到独立目录。
+**paper方式不重新测量开发搜索成本。** 运行后报告会注明该限制，空的开发成本表不代表成本为零。不要混用两种方式的部分产物；比较两种方式应分别解压到独立目录。
 
 ### 单卡与分阶段运行
 
@@ -109,10 +109,10 @@ CUDA_VISIBLE_DEVICES=0 python scripts/reproduce.py --stage all --protocol paper 
 
 源码采用包内相对路径。不要把旧工作区的 `development_freeze.json`、`formal_release.json`、模型或结果复制回来假装本次生成。历史原始manifest含开发观测，因此没有原样打包；本次manifest在用户执行时重新建立。
 
-论文每部分的对应方法、表格来源与统计口径见 [docs/PAPER_TO_CODE.md](docs/PAPER_TO_CODE.md)。约束强度/目标/选点对照属于当前论文的机制实验，不是最初HASI模块消融的旧实验。
+论文各部分的实现、表格来源与统计口径见 [docs/PAPER_TO_CODE.md](docs/PAPER_TO_CODE.md)。
 
 ## 验证范围
 
-本次打包检查代码指纹、依赖导入、合成小图测试、启动计划与统计工具；没有下载/预处理完整图或重跑论文训练。输入缺失时需要用户自行准备，数值一致性仍受依赖版本与设备影响。本包不声明已复现全文数值，也没有附上旧结果来替代运行。
+校验工具检查文件指纹与 Python 语法；`tests/` 提供合成小图及复现工具测试。本包未重新执行完整图预处理或论文训练，数值一致性需在准备数据并完成实验后核对。
 
 所有安装/运行示例均以解压目录为基准使用相对路径；`../datasets/`为用户自行存放输入的示例位置，不是包内数据。源码以`__file__`自动定位项目目录，没有打包机器的固定绝对路径。
