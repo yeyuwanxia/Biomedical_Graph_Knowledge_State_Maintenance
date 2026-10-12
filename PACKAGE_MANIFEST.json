@@ -15,8 +15,8 @@
       "role": "reproduction_support"
     },
     "README.md": {
-      "sha256": "808679737de71ea69b42d44b97cf6f276bc6937eab793bb7eb7af12ecfdf06b8",
-      "bytes": 8427,
+      "sha256": "ea01168380a997bc502ab00ddba69fa981d6dec83318a9f480cea75b4ae23957",
+      "bytes": 7707,
       "role": "reproduction_support"
     },
     "configs/analysis_steps.json": {
@@ -35,13 +35,13 @@
       "role": "reproduction_support"
     },
     "docs/ENVIRONMENT.md": {
-      "sha256": "81247f509ef0a74aa511a3cfd01c4f4365bb907a5ac0317d7025ff3e7609a55e",
-      "bytes": 5745,
+      "sha256": "b2ce213189787976f3e6abda2c7b578af27c52f4755613a47c7a4783ac0d2e86",
+      "bytes": 5679,
       "role": "reproduction_support"
     },
     "docs/PAPER_TO_CODE.md": {
-      "sha256": "7e3c0162f577d59d9a6bee6286c838d7c1d60c9e6de8813c4dc589396f6c601e",
-      "bytes": 13693,
+      "sha256": "0c9007a4f4d444f973a55d4205b00341cef71891db24e8ec05440fd5bf75ea4c",
+      "bytes": 14213,
       "role": "reproduction_support"
     },
     "experiments/knowledge_state_maintenance/__init__.py": {
@@ -90,8 +90,8 @@
       "role": "reproduction_support"
     },
     "scripts/verify_package.py": {
-      "sha256": "7fdc6ed8e622c9c2c2859b5f834f6896879c84e16970f147f74ecb71d085865e",
-      "bytes": 1995,
+      "sha256": "3018f4c8fc08a7f486f8497ec651b998572d96cc4fcaddb511101afa4c2a7c35",
+      "bytes": 2049,
       "role": "reproduction_support"
     },
     "src/data/__init__.py": {
@@ -244,5 +244,6 @@
       "bytes": 3014,
       "role": "reproduction_support"
     }
-  }
+  },
+  "updated_date": "2026-10-12"
 }
