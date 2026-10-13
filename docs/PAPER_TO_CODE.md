@@ -2,7 +2,7 @@
 
 本仓库实现论文中的 Hetionet 实体类型分类（node）和 Compound–treats–Disease 关系预测（relation）实验，入口为 `experiments/knowledge_state_maintenance/`。
 
-本包只包含代码、协议、配置和说明。下文提到的 `data/`、模型、预测数组、统计 CSV、审计 JSON 和图表都是读者准备数据并运行后生成的文件，压缩包不携带这些文件。仅有代码不能直接重放原论文结果；数据准备见 `DATA_PREPARATION.md`，执行入口与环境安装以包根 README 为准。
+本包包含代码、协议、配置和说明，不包含数据或实验结果 CSV。下文实验流程中的 `data/`、模型、预测数组、运行统计 CSV、审计 JSON 和图表由读者准备数据并运行后生成。图4–6的绘图脚本读取脚本旁 `data/` 目录的四份本地 CSV，输入说明见 `publication_figures/README.md`；完整实验的数据准备见 `DATA_PREPARATION.md`，执行入口与环境安装以包根 README 为准。
 
 ## 1. 实验实现
 
