@@ -5,7 +5,7 @@
 对应论文：
 **Knowledge-State Maintenance in Biomedical Graph Learning: An Empirical Study of Representation Constraints**。
 
-本仓库提供 Hetionet 实体类型分类、Compound–treats–Disease 关系预测，以及 FT / Matched-Retrain / 表示约束方法的机制与调优比较代码。**不包含数据集、模型权重、训练日志、预测数组或实验结果。** 输入与结果文件由使用者准备或运行后生成。
+本仓库提供 Hetionet 实体类型分类、Compound–treats–Disease 关系预测，以及 FT / Matched-Retrain / 表示约束方法的机制与调优比较代码。**不包含数据集、模型权重、训练日志、预测数组或实验结果 CSV。** 实验和绘图输入由使用者准备，运行结果在本地生成。
 
 ## 内容与版本
 
@@ -14,6 +14,7 @@
 - `reproduction/PROTOCOL.md`：原执行前协议，本目录打包时仅有该说明文件。
 - `configs/paper_protocol.json`：开发候选、论文采用的超参数、随机种子与复现实验规模；不含开发验证分数、正式指标或预测。
 - `scripts/`：新增的数据准备、可变GPU数量调度、统计整理和包完整性检查工具。
+- `publication_figures/`：论文图4–6的排版脚本与输入文件说明；CSV 数据不随包提供。
 - `tests/`：原8项实现测试，以及新增工具的小型合成测试。
 - `docs/`：安装环境、数据准备和论文实验与代码对应说明。
 
@@ -110,6 +111,16 @@ CUDA_VISIBLE_DEVICES=0 python scripts/reproduce.py --stage all --protocol paper 
 源码采用包内相对路径。不要把旧工作区的 `development_freeze.json`、`formal_release.json`、模型或结果复制回来假装本次生成。历史原始manifest含开发观测，因此没有原样打包；本次manifest在用户执行时重新建立。
 
 论文各部分的实现、表格来源与统计口径见 [docs/PAPER_TO_CODE.md](docs/PAPER_TO_CODE.md)。
+
+## 6. 复绘论文图4–6
+
+自行准备四份绘图输入 CSV，并放在脚本旁的 `publication_figures/data/` 目录；文件名和说明见 [publication_figures/README.md](publication_figures/README.md)。该数据目录已在 `.gitignore` 中排除。安装已有绘图依赖后，在代码包根目录执行：
+
+```bash
+python publication_figures/plot_results.py
+```
+
+脚本通过自身位置读取相对路径 `data/<文件名>.csv`，生成图4–6的 PNG、PDF、SVG 和预览到 `publication_figures/`。正式实验结果由前述训练、report 和 analysis 阶段重新计算。
 
 ## 验证范围
 

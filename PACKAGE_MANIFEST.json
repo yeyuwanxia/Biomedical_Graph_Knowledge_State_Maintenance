@@ -2,11 +2,11 @@
   "package": "Biomedical_Graph_Knowledge_State_Maintenance",
   "paper_title": "Knowledge-State Maintenance in Biomedical Graph Learning: An Empirical Study of Representation Constraints",
   "created_date": "2026-09-23",
-  "content": "Code, experiment configuration, synthetic tests and documentation only; no datasets, checkpoints or experiment results.",
+  "content": "Code, experiment configuration, synthetic tests, documentation and plotting scripts only; no datasets, checkpoints, predictions or experiment-result CSV files.",
   "files": {
     ".gitignore": {
-      "sha256": "0f4883e62f895821e2bfea59be77903ad7a83484b6e8d5b54a41e39851e2430b",
-      "bytes": 94,
+      "sha256": "52ac01c7e7f3db7980cba7db442816bcca8632d64e98caecc370f7548d091042",
+      "bytes": 121,
       "role": "reproduction_support"
     },
     "EXPERIMENT_SOURCE_MANIFEST.json": {
@@ -15,8 +15,8 @@
       "role": "reproduction_support"
     },
     "README.md": {
-      "sha256": "ea01168380a997bc502ab00ddba69fa981d6dec83318a9f480cea75b4ae23957",
-      "bytes": 7707,
+      "sha256": "bf83f557fd0dcb25db00cb9999c229db8d9164080068d1a594dc63d261f2b206",
+      "bytes": 8427,
       "role": "reproduction_support"
     },
     "configs/analysis_steps.json": {
@@ -40,8 +40,8 @@
       "role": "reproduction_support"
     },
     "docs/PAPER_TO_CODE.md": {
-      "sha256": "ea4ee0df6f87e33446383f5980ea50ff98000b16ef294ce2ab3143e58b9613d4",
-      "bytes": 14305,
+      "sha256": "991ec0778b571de707f6370345aa310d174c252f5a55284ff9c1ea4edf94b991",
+      "bytes": 14401,
       "role": "reproduction_support"
     },
     "experiments/knowledge_state_maintenance/__init__.py": {
@@ -63,6 +63,16 @@
       "sha256": "9257217c261b0976397a69b0477757991288d6a40f858fbc46bb1319d2e010b6",
       "bytes": 20570,
       "role": "experiment_source"
+    },
+    "publication_figures/README.md": {
+      "sha256": "2f9e8f7731f6559100c03a837ca1959e006b30e7bc46c3fc6b2bf767812b26b0",
+      "bytes": 1521,
+      "role": "documentation"
+    },
+    "publication_figures/plot_results.py": {
+      "sha256": "4f839affcff7af6b489b52c0b60675869f27d7b680dad98f94b4716f20dadcfb",
+      "bytes": 15583,
+      "role": "publication_figure_script"
     },
     "reproduction/PROTOCOL.md": {
       "sha256": "a185ccdbba8f85d5aee7bb1c53554496a78f208b84dd549883cb1bd347d96bc7",
@@ -245,5 +255,5 @@
       "role": "reproduction_support"
     }
   },
-  "updated_date": "2026-10-12"
+  "updated_date": "2026-10-13"
 }

@@ -5,3 +5,4 @@ __pycache__/
 /results/
 /reproduction/*
 !/reproduction/PROTOCOL.md
+/publication_figures/data/
