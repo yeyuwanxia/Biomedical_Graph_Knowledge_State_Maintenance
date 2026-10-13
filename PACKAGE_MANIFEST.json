@@ -70,8 +70,8 @@
       "role": "documentation"
     },
     "publication_figures/plot_results.py": {
-      "sha256": "4f839affcff7af6b489b52c0b60675869f27d7b680dad98f94b4716f20dadcfb",
-      "bytes": 15583,
+      "sha256": "08c0b642935bc4854ad862872c1f6b532c425ba9d831cf78cf1f585612c9f7b7",
+      "bytes": 15709,
       "role": "publication_figure_script"
     },
     "reproduction/PROTOCOL.md": {
