@@ -32,3 +32,7 @@ python publication_figures/plot_results.py
 ```
 
 输出保存在脚本目录：三张图各自的 600 dpi PNG、PDF、SVG、150 dpi 预览，以及四种计时范围的 LaTeX 表格 `appendix_table13.tex`。绘图使用输入表中已报告的 SD、配对区间和 Holm p，不根据舍入后的均值重算区间。脚本内的数据校验针对论文显示数值；自行准备的表格应使用对应字段、统计口径和单位。
+
+## 图形样式与字体
+
+图4–6与论文方法图采用一致的浅青蓝背景、深蓝边框、蓝绿配色和粗体衬线标题。优先使用 Times New Roman；系统未安装时按顺序使用 Liberation Serif、STIXGeneral 或 DejaVu Serif。数学符号使用 STIX。要得到与当前论文完全相同的字体，请在绘图环境安装 Times New Roman。数据读取和统计口径不受字体选择影响。
