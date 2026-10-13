@@ -65,13 +65,13 @@
       "role": "experiment_source"
     },
     "publication_figures/README.md": {
-      "sha256": "2f9e8f7731f6559100c03a837ca1959e006b30e7bc46c3fc6b2bf767812b26b0",
-      "bytes": 1521,
+      "sha256": "a7eeaf10528ad69be06ff4961ce81c0095557f810debd233164102c71dcb1b5e",
+      "bytes": 1945,
       "role": "documentation"
     },
     "publication_figures/plot_results.py": {
-      "sha256": "08c0b642935bc4854ad862872c1f6b532c425ba9d831cf78cf1f585612c9f7b7",
-      "bytes": 15709,
+      "sha256": "96f676c73a5437083bedfe9efaa6fed707c7afeb84f4d95e14165ee0586a2653",
+      "bytes": 17047,
       "role": "publication_figure_script"
     },
     "reproduction/PROTOCOL.md": {
