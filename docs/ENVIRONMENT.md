@@ -2,7 +2,7 @@
 
 下表列出论文实验记录的核心软件版本，提取自 `development_freeze.json` 和 `validation/environment_and_tests.json`；本包不附带这两个原运行记录文件。
 
-| 项目 | 该批次已记录的配置 |
+| 项目 | 论文实验记录的配置 |
 | --- | --- |
 | Python | 3.12.7，Anaconda 构建 |
 | PyTorch | `2.9.0+cu128` |
@@ -30,9 +30,9 @@ python -m pip install -r requirements.txt
 python -m pip check
 ```
 
-CUDA 12.8 安装入口已对照 [PyTorch 官方历史版本安装页](https://pytorch.org/get-started/previous-versions/)中的 2.9.0 命令。此项目不需要 torchvision 或 torchaudio，因此未安装它们。实际机器仍需具有兼容驱动，是否可用应以以下检查为准。
+PyTorch 2.9.0 与 CUDA 12.8 的安装命令见 [PyTorch 官方历史版本安装页](https://pytorch.org/get-started/previous-versions/)。本项目不需要安装 torchvision 或 torchaudio。实际机器仍需具有兼容驱动，是否可用应以以下检查为准。
 
-`requirements.txt` 锁定了本轮确有记录的七个 Python 包；`networkx` 和 `pytest` 是源码和测试需要、但历史精确版本未记录的依赖，故保持未锁定。传递依赖也未全部锁定。这不是完整的历史环境锁文件，应在新环境安装后保存实际版本。
+`requirements.txt` 锁定了论文实验记录的七个 Python 包；`networkx` 和 `pytest` 是源码和测试需要、但历史精确版本未记录的依赖，故保持未锁定。传递依赖也未全部锁定。这不是完整的历史环境锁文件，应在新环境安装后保存实际版本。
 
 ```bash
 python -c "import torch, torch_geometric; print('torch:', torch.__version__); print('PyG:', torch_geometric.__version__); print('CUDA runtime:', torch.version.cuda); print('available:', torch.cuda.is_available()); print('visible GPU count:', torch.cuda.device_count())"
@@ -43,7 +43,7 @@ python -m pytest tests/test_knowledge_state_maintenance.py -q
 
 ## GPU 数量与计时
 
-冻结原入口 `python -m experiments.knowledge_state_maintenance.run run` 固定要求三张可见 GPU。本包新增的 `scripts/reproduce.py` 接受 `--devices cuda:0`，可在一张可见 GPU 上依次执行全部任务；默认配置使用三张可见 GPU。设备编号是 `CUDA_VISIBLE_DEVICES` 筛选后的逻辑编号。
+冻结原入口 `python -m experiments.knowledge_state_maintenance.run run` 固定要求三张可见 GPU。`scripts/reproduce.py` 接受 `--devices cuda:0`，可在一张可见 GPU 上依次执行全部任务；默认配置使用三张可见 GPU。设备编号是 `CUDA_VISIBLE_DEVICES` 筛选后的逻辑编号。
 
 单卡示例（数据准备和模式选择见根目录 README）：
 
@@ -51,11 +51,11 @@ python -m pytest tests/test_knowledge_state_maintenance.py -q
 CUDA_VISIBLE_DEVICES=0 python scripts/reproduce.py --stage all --devices cuda:0
 ```
 
-原训练方法、随机种子和评价逻辑保留在冻结源码中；新增入口调整准备步骤和任务调度。改变 GPU 数量、型号、依赖版本或负载后，应重新记录耗时，并将其视作本次环境下的测量。正式完整训练仍需 CUDA；CPU 可用于上述合成单元测试。
+原训练方法、随机种子和评价逻辑保留在冻结源码中；复现入口负责准备步骤和任务调度。改变 GPU 数量、型号、依赖版本或负载后，应重新记录耗时，并将其视作当前运行环境下的测量。正式完整训练仍需 CUDA；CPU 可用于上述合成单元测试。
 
 ## 为自己的新运行采集环境
 
-下面的命令仅在用户执行后生成本次环境记录。压缩包不预置这些输出，也不把当前打包机器的配置当作论文原环境。
+下面的命令在执行后生成当前运行的环境记录。压缩包不预置这些输出；记录只描述当前运行环境，不代表论文原实验环境。
 
 ```bash
 python - <<'PY'

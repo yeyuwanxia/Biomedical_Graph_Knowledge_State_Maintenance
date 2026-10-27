@@ -4,7 +4,7 @@
 
 ## 1. 获取原始 Hetionet v1.0
 
-从 [Hetionet 官方 JSON 目录](https://github.com/hetio/hetionet/tree/main/hetnet/json) 获取 `hetionet-v1.0.json.bz2`。该文件是含 `nodes`、`edges` 等对象的 bzip2 压缩 JSON；不要下载只有图模式的 `hetionet-v1.0-metagraph.json`。目录及文件名称已于 2026-09-23 核对。
+从 [Hetionet 官方 JSON 目录](https://github.com/hetio/hetionet/tree/main/hetnet/json) 获取 `hetionet-v1.0.json.bz2`。该文件是含 `nodes`、`edges` 等对象的 bzip2 压缩 JSON；不要下载只有图模式的 `hetionet-v1.0-metagraph.json`。
 
 冻结代码记录的下载地址为：
 
@@ -46,7 +46,7 @@ data/
 python scripts/prepare_data.py --check-only
 ```
 
-此命令仍需载入缓存及 PyTorch/PyG 等依赖，但不会写文件或计算新的图特征。首次建立全图缓存会解压约 225 万条边，并由 NetworkX 计算三角形、核心数和 PageRank，需要较多 CPU 时间和内存。本代码包制作时只验证了微型合成图，未重新执行完整图预处理或完整训练。
+此命令仍需载入缓存及 PyTorch/PyG 等依赖，但不会写文件或计算新的图特征。首次建立全图缓存会解压约 225 万条边，并由 NetworkX 计算三角形、核心数和 PageRank，需要较多 CPU 时间和内存。验证范围为微型合成图，未重新执行完整图预处理或完整训练。
 
 ## 3. 节点任务与论文一致的构图规则
 
@@ -83,7 +83,7 @@ python scripts/prepare_data.py --check-only
 - 从背景图排除所有直接 Compound–Disease 记录，再加入当前划分允许使用的训练 `treats`。构造传播边时去自环、双向化和去重。
 - 正例划分为 604/75/76；验证/测试各有 750/760 个未知候选作为负例。训练负例由后续基模型种子选取。
 
-划分及关系缓存写在 `reproduction/data/`，均为本次执行的新产物，未放入压缩包。
+划分及关系缓存写在 `reproduction/data/`，均由当前运行生成，未放入压缩包。
 
 ## 5. 输入哈希与重新复现的边界
 
@@ -97,4 +97,4 @@ python scripts/prepare_data.py --check-only
 
 因此，包装脚本强制校验原始 `.bz2` 哈希、图规模、标签分布、20 维特征模式、去自环/双向/去重及保留孤立节点等协议，并记录新缓存字节哈希、张量内容哈希和依赖版本到 `data/preparation_receipt.json`。张量内容哈希用于同环境的新运行之间比较，不代表已经与作者未随包分发的旧张量逐位验证。已有缓存的核验不会重新计算全部结构特征。
 
-冻结运行入口按本次生成的输入记录新的哈希和完成回执，没有要求新缓存必须等于旧字节哈希；只能在新的复现目录中运行，不能把新缓存与旧任务划分、模型或结果拼接后宣称原始归档重现。论文数值的一致性需等完整实验运行后另行比较。
+冻结运行入口按当前运行生成的输入记录新的哈希和完成回执，没有要求新缓存必须等于旧字节哈希；只能在新的复现目录中运行，不能把新缓存与旧任务划分、模型或结果拼接后宣称原始归档重现。论文数值的一致性需等完整实验运行后另行比较。
