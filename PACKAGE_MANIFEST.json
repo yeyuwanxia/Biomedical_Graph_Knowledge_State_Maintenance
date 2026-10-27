@@ -1,22 +1,11 @@
 {
   "package": "Biomedical_Graph_Knowledge_State_Maintenance",
   "paper_title": "Knowledge-State Maintenance in Biomedical Graph Learning: An Empirical Study of Representation Constraints",
-  "created_date": "2026-09-23",
   "content": "Code, experiment configuration, synthetic tests, documentation and plotting scripts only; no datasets, checkpoints, predictions or experiment-result CSV files.",
   "files": {
     ".gitignore": {
-      "sha256": "52ac01c7e7f3db7980cba7db442816bcca8632d64e98caecc370f7548d091042",
-      "bytes": 121,
-      "role": "reproduction_support"
-    },
-    "EXPERIMENT_SOURCE_MANIFEST.json": {
-      "sha256": "bc6df309db1e71ec2e6c630d795326fca463cfa169bb0d472888d19b622aa0c7",
-      "bytes": 15729,
-      "role": "reproduction_support"
-    },
-    "README.md": {
-      "sha256": "bf83f557fd0dcb25db00cb9999c229db8d9164080068d1a594dc63d261f2b206",
-      "bytes": 8427,
+      "sha256": "d340fcde8a2d97e7bb380c0bfda523399a860c241e930037585106c8d8826fd4",
+      "bytes": 381,
       "role": "reproduction_support"
     },
     "configs/analysis_steps.json": {
@@ -30,18 +19,23 @@
       "role": "reproduction_support"
     },
     "docs/DATA_PREPARATION.md": {
-      "sha256": "d16faf8c3132b0baf359864b275cf419c8f51329c47233a39742bfcc38c2175e",
-      "bytes": 7140,
+      "sha256": "467fd20f3673fec429735263bb100907d2815dfdf4718e789c137c3fb3e71f3e",
+      "bytes": 7174,
       "role": "reproduction_support"
     },
     "docs/ENVIRONMENT.md": {
-      "sha256": "b2ce213189787976f3e6abda2c7b578af27c52f4755613a47c7a4783ac0d2e86",
-      "bytes": 5679,
+      "sha256": "167528061954cbcfe28d0636011efeab5fd034587b4c4c4c8f7fea1dd877c8a1",
+      "bytes": 5769,
       "role": "reproduction_support"
     },
     "docs/PAPER_TO_CODE.md": {
-      "sha256": "991ec0778b571de707f6370345aa310d174c252f5a55284ff9c1ea4edf94b991",
-      "bytes": 14401,
+      "sha256": "24dfd71bc9b2cd62ddcc9914e569638db9a7c61367ab893738c09ac1d655a013",
+      "bytes": 16616,
+      "role": "reproduction_support"
+    },
+    "EXPERIMENT_SOURCE_MANIFEST.json": {
+      "sha256": "4662960c09ec875eaa593fefac767aff30b6bca94d1d63785e3ae96831aedc13",
+      "bytes": 16208,
       "role": "reproduction_support"
     },
     "experiments/knowledge_state_maintenance/__init__.py": {
@@ -64,19 +58,29 @@
       "bytes": 20570,
       "role": "experiment_source"
     },
-    "publication_figures/README.md": {
-      "sha256": "a7eeaf10528ad69be06ff4961ce81c0095557f810debd233164102c71dcb1b5e",
-      "bytes": 1945,
-      "role": "documentation"
+    "publication_figures/plot_mechanism_core.py": {
+      "sha256": "2f41da17fabb76622e66d6318bca04c1f0ba12f55f58280e69e43cb7b7d1b1c5",
+      "bytes": 6979,
+      "role": "publication_figure_script"
     },
     "publication_figures/plot_results.py": {
       "sha256": "96f676c73a5437083bedfe9efaa6fed707c7afeb84f4d95e14165ee0586a2653",
       "bytes": 17047,
       "role": "publication_figure_script"
     },
+    "publication_figures/README.md": {
+      "sha256": "d3c4dec0fde7899852bd252dcb9a9f39363533b3e73cbba1d52717893f5d5e8c",
+      "bytes": 3576,
+      "role": "documentation"
+    },
+    "README.md": {
+      "sha256": "c9dc212d579f3419c80b814130ae4e11be1c77e97a75a706c3eda9ee5358581c",
+      "bytes": 9250,
+      "role": "reproduction_support"
+    },
     "reproduction/PROTOCOL.md": {
-      "sha256": "a185ccdbba8f85d5aee7bb1c53554496a78f208b84dd549883cb1bd347d96bc7",
-      "bytes": 8291,
+      "sha256": "b4d78f39ef1f09141e2be230d590a3a16db83467ad87a2d381d14c55269d9cd0",
+      "bytes": 8167,
       "role": "experiment_source"
     },
     "requirements.txt": {
@@ -254,6 +258,5 @@
       "bytes": 3014,
       "role": "reproduction_support"
     }
-  },
-  "updated_date": "2026-10-13"
+  }
 }

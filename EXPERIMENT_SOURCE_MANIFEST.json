@@ -1,12 +1,12 @@
 {
-  "description": "Current-manuscript experiment dependency subset. Directory/module references renamed as requested; training and statistical algorithms unchanged.",
+  "description": "Current-manuscript experiment dependency subset. Module and output paths use the packaged layout. The protocol introduction has editorial changes; experimental rules and training/statistical algorithms are unchanged.",
   "original_snapshot_sha256": "0261ca4e7fdfb77e2e317a08e724de4b6fdff68be2e2108bb46c4b697324ccb3",
   "source_hashes": {
     "experiments/knowledge_state_maintenance/__init__.py": "fd1d95d20eb398c4a591c49ebfb2f5126fa3684b4f57f4ba2469c1cab3ae8f5f",
     "experiments/knowledge_state_maintenance/report.py": "335161750955c5de549a246f03fdd68e9a128cd490b61787096dfcd21f65cd27",
     "experiments/knowledge_state_maintenance/run.py": "f3fc1f0cd91eafb3c13939e5ab7c5a53f43c28b35de23d5493fe4bd9e1b76f8d",
     "experiments/knowledge_state_maintenance/runtime.py": "9257217c261b0976397a69b0477757991288d6a40f858fbc46bb1319d2e010b6",
-    "reproduction/PROTOCOL.md": "a185ccdbba8f85d5aee7bb1c53554496a78f208b84dd549883cb1bd347d96bc7",
+    "reproduction/PROTOCOL.md": "b4d78f39ef1f09141e2be230d590a3a16db83467ad87a2d381d14c55269d9cd0",
     "src/data/__init__.py": "b80c9ed6835a279f177e3278562ad2b4340c67edb27bd7f74901c7df5a23de0e",
     "src/data/datasets.py": "2fbe208edc1f66901d02c7bba2c381ce9e05c19ba9e1e1427b42f45a093ba999",
     "src/data/forget_sets.py": "4d48df66ad0e70a73a8402cbb6c1b8ac01b4e5dbe536ce7ce398560333ee81b9",
@@ -68,8 +68,8 @@
       "original_path": "followup_20260911/PROTOCOL.md",
       "packaged_path": "reproduction/PROTOCOL.md",
       "original_sha256": "a185ccdbba8f85d5aee7bb1c53554496a78f208b84dd549883cb1bd347d96bc7",
-      "packaged_sha256": "a185ccdbba8f85d5aee7bb1c53554496a78f208b84dd549883cb1bd347d96bc7",
-      "change": "byte-identical"
+      "packaged_sha256": "b4d78f39ef1f09141e2be230d590a3a16db83467ad87a2d381d14c55269d9cd0",
+      "change": "Editorial changes to the protocol introduction only. All subsequent experimental rules are byte-identical; the original source hash is retained."
     },
     {
       "original_path": "src/data/__init__.py",
